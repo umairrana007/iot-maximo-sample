@@ -1,0 +1,9 @@
+applications:
+- disk_quota: 1024M
+  host: <YOUR BLUEMIX HOST>
+  name: <YOUR BLUEMIX NAME>
+  command: node app.js
+  path: .
+  domain: <YOUR BLUEMIX DOMAIN Ex. mybluemix.net>
+  instances: 1
+  memory: 128M
