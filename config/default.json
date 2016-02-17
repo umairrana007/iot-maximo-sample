@@ -1,7 +1,7 @@
 {
 	"mqtt-topic": "iot-2/type/<TYPE>/id/<ID>/evt/<EVENT>/fmt/json",
 	
-	"iotf-service-name": "Internet of Things Foundation-bi",
+	"iotf-service-name": "iotf-maximo",
 
 	"iotf-service": [{
 		"name": "iotf-maximo",
