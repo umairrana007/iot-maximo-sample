@@ -1,9 +1,11 @@
 applications:
-- disk_quota: 1024M
-  host: <YOUR BLUEMIX HOST>
-  name: <YOUR BLUEMIX NAME>
+- services:
+  - iotf-maximo
+  host: iot-maximo
+  name: iot-maximo
+  disk: 128M
   command: node app.js
   path: .
-  domain: <YOUR BLUEMIX DOMAIN Ex. mybluemix.net>
+  domain: mybluemix.net
+  memory: 64M
   instances: 1
-  memory: 128M

@@ -1,0 +1,32 @@
+{
+	"mqtt-topic": "iot-2/type/<TYPE>/id/<ID>/evt/<EVENT>/fmt/json",
+	
+	"iotf-service-name": "Internet of Things Foundation-bi",
+
+	"iotf-service": [{
+		"name": "iotf-maximo",
+		"label": "iotf-service",
+		"plan": "iotf-service-free",
+		"credentials": {
+			"mqtt_host": "<ORG>.messaging.internetofthings.ibmcloud.com",
+			"mqtt_u_port": 1883,
+			"mqtt_s_port": 8883,
+			"base_uri": "https://<ORG>.internetofthings.ibmcloud.com:443/api/v0001",
+			"http_host": "<ORG>.internetofthings.ibmcloud.com",
+			"org": "<ORG>",
+			"apiKey": "a-<ORG>-<KEY>",
+			"apiToken": "<PASSWORD>"
+		}
+	}],
+	
+	"maximo-options": {
+		"protocol": "https",
+		"hostname": "mamhse1.mam.ibmserviceengage.com",
+		"port": "443",
+		"user": "wilson",
+		"password": "wilson",
+		"auth_scheme": "/maximo_b1dk",
+		"authtype": "maxauth",
+		"islean": 1
+	}
+}
