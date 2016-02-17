@@ -31,7 +31,6 @@
 		return result;
 	};
 
-
 	MQTTClient.prototype.username = function(username) {
 		this.user = username;
 		return this;
@@ -61,7 +60,6 @@
 		}
 		return this.client;
 	};
-
 
 	MQTTClient.prototype.loadConfig = function() {
 		var services = {};

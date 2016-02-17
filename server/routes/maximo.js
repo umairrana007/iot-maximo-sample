@@ -17,6 +17,10 @@
 	// Maximo connection details. Change these props for your Maximo
 	var options = config.get('maximo-options');
 
+	router.get('/', function(req, res) {
+		res.send('Please use createwo, querywo or updatewo routes.');
+	});
+
 	// Queries a Work Order
 	router.get('/querywo/:wonum/:siteid/:assetnum?', function(req, res) {
 		var maximo = new Maximo(options);

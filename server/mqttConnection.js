@@ -11,73 +11,53 @@
 		var vcap = JSON.parse(process.env.VCAP_APPLICATION);
 		host = vcap.uris[0];
 	}
+	host = 'http://' + host + '/maxtest/';
 
+	var processGetRequest = function(path) {
+		request.get(host + path)
+			.on('response', function(response) {
+				console.log('received JSON: ' + JSON.stringify(response));
+			})
+			.on('data', function(data) {
+				console.log('data JSON: ' + data);
+			});
+	};
 
 	var init = function() {
 
 		var mqttClient = mqtt.connect();
-
+		
 		mqttClient.subscribe(config.get('mqtt-topic'));
 
 		mqttClient.on('message', function(topic, message, packet) {
-
 			var payload = JSON.parse(message);
 
 			console.log('received message: ' + JSON.stringify(payload));
 			console.log('Action: ' + payload.action);
 
-			//open payload
-			//switch according actions
-			//each action - get different router
-
+			var path = '/';
 			switch (payload.action) {
-				//Ex payload: {"action":"query","object":"wo","attr":{"wonum":"1000","siteid":"BEDFORD","assetnum":"11300"}}
 				case "query":
-					request
-						.get('http://' + host + '/maxtest/query' + payload.object + '/' + payload.attr.wonum + '/' + payload.attr.siteid + '/' + payload.attr.assetnum)
-						.on('response', function(response) {
-							console.log('received JSON: ' + JSON.stringify(response));
-						})
-						.on('data', function(data) {
-							console.log('data JSON: ' + data);
-						});
+					// payload example:
+					// {"action":"query","attr":{"wonum":"1000","siteid":"BEDFORD"}}
+					// {"action":"query","attr":{"wonum":"1000","siteid":"BEDFORD","assetnum":"11300"}}
+					path = 'querywo/' + payload.attr.wonum + '/' + payload.attr.siteid;
+					if (payload.attr.assetnum) {
+						path = path + '/' + payload.attr.assetnum;
+					}
 					break;
-					//Ex payload: 	{"action":"create","object":"wo","data":{"desc":"fromAPI","assetnum":"11300"}}
 				case "create":
-					if (payload.object == 'wo') {
-						request
-							.get('http://' + host + '/maxtest/create' + payload.object + '/' + payload.data.desc + '/' + payload.data.assetnum)
-							.on('response', function(response) {
-								console.log('received JSON: ' + JSON.stringify(response));
-							})
-							.on('data', function(data) {
-								console.log('data JSON: ' + data);
-							});
-					}
-					else if (payload.object == 'incident') {
-						request
-							.get('http://' + host + '/maxtest/create' + payload.object + '/' + payload.data.desc + '/' + payload.data.location)
-							.on('response', function(response) {
-								console.log('received JSON: ' + JSON.stringify(response));
-							})
-							.on('data', function(data) {
-								console.log('data JSON: ' + data);
-							});
-					}
+					// payload example:
+					// {"action":"create","object":"wo","data":{"desc":"fromAPI","assetnum":"11300"}}
+					path = 'createwo/' + payload.data.desc + '/' + payload.data.assetnum;
 					break;
-					//Ex payload: 	{"action":"update","object":"wo","attr":{"wonum":"1000","siteid":"BEDFORD"},"data":{"desc":"UpdateFromAPI"}}			
 				case "update":
-					request
-						.get('http://' + host + '/maxtest/update' + payload.object + '/query/' + payload.attr.wonum + '/' + payload.attr.siteid + '/attrib/' + payload.data.desc)
-						.on('response', function(response) {
-							console.log('received JSON: ' + JSON.stringify(response));
-						})
-						.on('data', function(data) {
-							console.log('data JSON: ' + data);
-
-						});
+					// payload example:
+					// {"action":"update","attr":{"wonum":"1000","siteid":"BEDFORD"},"data":{"desc":"UpdateFromAPI"}}			
+					path = 'updatewo/query/' + payload.attr.wonum + '/' + payload.attr.siteid + '/attrib/' + payload.data.desc;
 					break;
 			}
+			processGetRequest(path);
 		});
 	};
 
