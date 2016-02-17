@@ -1,6 +1,6 @@
 {
 	"mqtt-topic": "iot-2/type/sensortag/id/tisensortag/evt/+/fmt/json",
-	
+	"iotf-service-name": "iotf-maximo",
 	"maximo-options": {
 		"protocol": "https",
 		"hostname": "mamhse1.mam.ibmserviceengage.com",
