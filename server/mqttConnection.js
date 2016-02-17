@@ -5,7 +5,7 @@
 	var config = require('config');
 	var mqtt = require('./mqtt/Client');
 
-	var host = host = 'localhost:3000';
+	var host = 'localhost:3000';
 	if (process.env.VCAP_APPLICATION) {
 		var vcap = JSON.parse(process.env.VCAP_APPLICATION);
 		host = vcap.uris[0];
