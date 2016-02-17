@@ -3,7 +3,7 @@
 	var express = require('express');
 	var Q = require('q');
 	var fs = require("fs");
-	var Maximo = require('ibm-maximo-api'); // Reference to Maximo OSLC API
+	var Maximo = require('../../ibm-maximo-api'); // Reference to Maximo OSLC API
 	var config = require('config');
 
 	var router = express.Router();
