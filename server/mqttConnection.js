@@ -3,6 +3,7 @@
 (function() {
 	// MQTT connection
 	var config = require('config');
+	var request = require('request');
 	var mqtt = require('./mqtt/Client');
 
 	var host = 'localhost:3000';
