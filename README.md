@@ -1,6 +1,6 @@
 ## iot-maximo
 
-# ** Steps: **
+# Steps:
 
 1. fork this project
 2. `git clone` your project
