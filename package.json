@@ -5,6 +5,7 @@
   "dependencies": {
     "config": "^1.19.0",
     "express": "^4.13.3",
+    "ibm-maximo-api": "^1.0.9",
     "mqtt": "^1.4.0",
     "q": "^1.4.1",
     "request": "^2.64.0"
