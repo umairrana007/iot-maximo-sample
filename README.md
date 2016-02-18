@@ -4,7 +4,7 @@
 
 ## Steps:
 
-1. fork this project
+1. [fork](https://github.com/nerygustavo/iot-maximo/fork) this project
 2. `git clone` your project
 3. update some files:
 	1. config/default.json
@@ -17,7 +17,7 @@
 
 ## Steps:
 
-1. fork this project
+1. [fork](https://github.com/nerygustavo/iot-maximo/fork) this project
 2. `git clone` your project
 3. update some files:
 	1. config/production.json
