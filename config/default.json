@@ -20,13 +20,13 @@
 	}],
 	
 	"maximo-options": {
-		"protocol": "https",
-		"hostname": "mamhse1.mam.ibmserviceengage.com",
-		"port": "443",
-		"user": "wilson",
-		"password": "wilson",
-		"auth_scheme": "/maximo_b1dk",
-		"authtype": "maxauth",
+		"protocol": "",
+		"hostname": "",
+		"port": "",
+		"user": "",
+		"password": "",
+		"auth_scheme": "",
+		"authtype": "",
 		"islean": 1
 	}
 }
