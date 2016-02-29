@@ -27,7 +27,7 @@
 		1. update `maximo-options` with your Maximo configuration
 		2. update `mqtt-topic` with your topic for subscription (the one you'll get payloads to perform actions on Maximo)
 	2. update README.md
-		1. replace `<rep>` on step 6 of this section with your repository link. Like: `https://github.com/username/iot-maximo`
+		1. replace `<rep>` on step 6 of this section with your repository link. Like: `https://github.com/USERNAME/iot-maximo`
 4. `git add`, `git commit`, `git push` your changes
 5. click the "Deploy to Bluemix" button.
 6. [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=<rep>)
