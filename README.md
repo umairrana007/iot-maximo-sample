@@ -22,7 +22,7 @@
 
 1. [fork](https://github.com/nerygustavo/iot-maximo/fork) this project
 2. click the "Deploy to Bluemix" button.
-3. [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=<rep>)
+ [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=<rep>)
 4. Once the app has been deployed, enter on the app dashboard at Bluemix and click on the button Edit Code.
 5. Update some files:
 	1. config/production.json
@@ -30,6 +30,7 @@
 		2. update `mqtt-topic` with your topic for subscription (the one you'll get payloads to perform actions on Maximo)
 6. Click on the Git icon, commit and push the files changed
 7. Click on Build and Deploy button. Run the Build Stage and then the Deploy Stage.
+8. See detailed steps at https://hub.jazz.net/docs/edit/
 
 ---
 # Running locally
