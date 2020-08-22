@@ -1,14 +1,14 @@
 {
 	"mqtt-topic": "iot-2/type/sensortag/id/tisensortag/evt/+/fmt/json",
 
-	"iotf-service-name": "iotf-maximo",
+	"iotf-service-name": "temservices",
 	
 	"maximo-options": {
-		"protocol": "",
-		"hostname": "",
-		"port": "",
-		"user": "",
-		"password": "",
+		"protocol": "http",
+		"hostname": "services-emea.skytap.com",
+		"port": "14760",
+		"user": "maxadmin",
+		"password": "maxadmin",
 		"auth_scheme": "",
 		"authtype": "",
 		"islean": 1
